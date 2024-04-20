@@ -5,7 +5,7 @@ const public_users = express.Router();
 // Task 10: Get the list of books available in the shop using async-await with Axios
 public_users.get('/', async function (req, res) {
     try {
-        const response = await axios.get('https://api.example.com/books');
+        const response = await axios.get('https://anwar2002zig-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/books');
         const books = response.data;
         res.status(200).json(books);
     } catch (error) {
@@ -17,7 +17,7 @@ public_users.get('/', async function (req, res) {
 public_users.get('/isbn/:isbn', async function (req, res) {
     const isbn = req.params.isbn;
     try {
-        const response = await axios.get(`https://api.example.com/books/${isbn}`);
+        const response = await axios.get(`https://anwar2002zig-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/books/isbn/${isbn}`);
         const book = response.data;
         res.status(200).json(book);
     } catch (error) {
@@ -29,7 +29,7 @@ public_users.get('/isbn/:isbn', async function (req, res) {
 public_users.get('/author/:author', async function (req, res) {
     const author = req.params.author;
     try {
-        const response = await axios.get(`https://api.example.com/books?author=${author}`);
+        const response = await axios.get(`https://anwar2002zig-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/books/author/${author}`);
         const booksByAuthor = response.data;
         res.status(200).json(booksByAuthor);
     } catch (error) {
@@ -41,7 +41,7 @@ public_users.get('/author/:author', async function (req, res) {
 public_users.get('/title/:title', async function (req, res) {
     const title = req.params.title;
     try {
-        const response = await axios.get(`https://api.example.com/books?title=${title}`);
+        const response = await axios.get(`https://anwar2002zig-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/books/title/${title}`);
         const booksByTitle = response.data;
         res.status(200).json(booksByTitle);
     } catch (error) {

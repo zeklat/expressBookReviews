@@ -22,7 +22,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
 
     try {
         // Verify the access token
-        const decoded = jwt.verify(accessToken, 'your_secret_key');
+        const decoded = jwt.verify(accessToken, 'secret');
 
         // Set user information in the session
         req.session.user = decoded.user;
